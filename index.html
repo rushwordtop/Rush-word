@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>高濃度芳香液（40ml）</title>
 
 <style>
@@ -15,7 +14,7 @@ background:#020617;
 color:white;
 }
 
-/* 背景粒子 */
+/* 粒子背景 */
 
 body::before{
 content:"";
@@ -28,6 +27,34 @@ background-image:radial-gradient(circle,#ffffff22 1px,transparent 1px);
 background-size:40px 40px;
 opacity:0.15;
 z-index:-1;
+}
+
+/* 導航列 */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 30px;
+background:#020617;
+border-bottom:1px solid #1f2937;
+}
+
+.logo{
+font-weight:bold;
+letter-spacing:2px;
+font-size:18px;
+}
+
+nav a{
+color:#9ca3af;
+margin-left:20px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:white;
 }
 
 /* Banner */
@@ -48,6 +75,22 @@ color:#9ca3af;
 margin-top:8px;
 }
 
+/* 搜尋 */
+
+.search{
+text-align:center;
+margin-top:20px;
+}
+
+.search input{
+padding:10px;
+width:260px;
+border-radius:8px;
+border:none;
+background:#111827;
+color:white;
+}
+
 /* 商品區 */
 
 .container{
@@ -60,7 +103,7 @@ grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
 gap:18px;
 }
 
-/* 卡片 */
+/* 商品卡片 */
 
 .card{
 background:rgba(255,255,255,0.05);
@@ -69,6 +112,12 @@ border-radius:12px;
 padding:12px;
 box-shadow:0 8px 25px rgba(0,0,0,0.4);
 border:1px solid rgba(255,255,255,0.08);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 18px rgba(255,140,0,0.4);
 }
 
 /* 商品圖片 */
@@ -130,19 +179,31 @@ line-height:1.4;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<header class="navbar">
+<div class="logo">RUSH AROMA</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+</nav>
+</header>
+
 <div class="hero">
 <h1>高濃度芳香液（40ml）</h1>
-<p>Premium Aroma Collection</p>
+<p>High Concentration Aroma Collection</p>
+</div>
+
+<div class="search">
+<input type="text" id="search" placeholder="Search product..." onkeyup="searchProduct()">
 </div>
 
 <div class="container">
 
-<div class="grid">
+<div class="grid" id="productGrid">
 
 <div class="card">
 <img src="products/裝甲戰役.PNG">
@@ -177,7 +238,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">力量與自信象徵，濃郁直接。</div>
+<div class="story">自信與力量象徵，氣勢直接。</div>
 </div>
 
 <div class="card">
@@ -186,7 +247,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">厚重型氣息，力量感強烈。</div>
+<div class="story">厚重型力量風格，衝擊直接。</div>
 </div>
 
 <div class="card">
@@ -195,7 +256,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐</div>
 <div class="badge b">B</div>
 <div class="price">NT$850</div>
-<div class="story">神秘系列設計，深沉層次感。</div>
+<div class="story">神秘系列設計，深沉層次。</div>
 </div>
 
 <div class="card">
@@ -204,7 +265,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">力量爆發型，衝擊感最強。</div>
+<div class="story">爆發型力量代表，衝擊最強。</div>
 </div>
 
 <div class="card">
@@ -213,7 +274,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐</div>
 <div class="badge u">U</div>
 <div class="price">NT$850</div>
-<div class="story">野性力量風格，原始強烈。</div>
+<div class="story">野性力量概念，原始強烈。</div>
 </div>
 
 <div class="card">
@@ -222,7 +283,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐</div>
 <div class="badge u">U</div>
 <div class="price">NT$850</div>
-<div class="story">科技感系列，節奏平衡。</div>
+<div class="story">科技感系列，節奏流暢。</div>
 </div>
 
 <div class="card">
@@ -231,7 +292,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">爆發型氣息，速度與衝擊。</div>
+<div class="story">爆發型氣息，衝擊迅猛。</div>
 </div>
 
 <div class="card">
@@ -245,6 +306,30 @@ line-height:1.4;
 
 </div>
 </div>
+
+<script>
+
+function searchProduct(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let name=card.querySelector(".name").innerText.toLowerCase();
+
+if(name.includes(input)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
