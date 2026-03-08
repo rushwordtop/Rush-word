@@ -116,10 +116,11 @@ padding:25px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(5,1fr);
+grid-template-columns:repeat(5,minmax(0,1fr));
 gap:20px;
 max-width:1200px;
-margin:auto;
+margin:0 auto;
+justify-content:center;
 }
 
 / 商品卡片 /
@@ -339,6 +340,7 @@ line-height:1.4;
 </div>
 
 <script>
+
 function searchProduct(){
 let input=document.getElementById("search").value.toLowerCase();
 let cards=document.querySelectorAll(".card");
@@ -348,7 +350,8 @@ let name=card.querySelector(".name").innerText.toLowerCase();
 card.style.display = name.includes(input) ? "block" : "none";
 });
 }
+
 </script>
 
 </body>
-</html>
+</html
