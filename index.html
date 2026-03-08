@@ -14,7 +14,7 @@ background:#020617;
 color:white;
 }
 
-/* 粒子背景 */
+/* 背景粒子 /
 
 body::before{
 content:"";
@@ -29,7 +29,7 @@ opacity:0.15;
 z-index:-1;
 }
 
-/* 導航列 */
+/ 導航列 /
 
 .navbar{
 display:flex;
@@ -57,7 +57,7 @@ nav a:hover{
 color:white;
 }
 
-/* Banner */
+/ Banner /
 
 .hero{
 text-align:center;
@@ -75,7 +75,7 @@ color:#9ca3af;
 margin-top:8px;
 }
 
-/* 警告 */
+/ 警告 /
 
 .warning{
 max-width:800px;
@@ -90,7 +90,7 @@ color:#d1d5db;
 text-align:center;
 }
 
-/* 搜尋 */
+/ 搜尋 /
 
 .search{
 text-align:center;
@@ -106,26 +106,29 @@ background:#111827;
 color:white;
 }
 
-/* 商品區 */
+/ 商品區 /
 
 .container{
 padding:25px;
 }
 
+/ 商品牆 /
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
-gap:18px;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+max-width:1200px;
+margin:auto;
 }
 
-/* 商品卡片 */
+/ 商品卡片 /
 
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
 border-radius:12px;
 padding:12px;
-box-shadow:0 8px 25px rgba(0,0,0,0.4);
+box-shadow:0 6px 20px rgba(0,0,0,0.35);
 border:1px solid rgba(255,255,255,0.08);
 }
 
@@ -138,21 +141,21 @@ border-radius:8px;
 padding:6px;
 }
 
-/* 名稱 */
+/ 名稱 /
 
 .name{
 font-size:14px;
 margin-top:6px;
 }
 
-/* 星星 */
+/ 星星 /
 
 .star{
 color:#facc15;
 font-size:13px;
 }
 
-/* 標籤 */
+/ 標籤 /
 
 .badge{
 display:inline-block;
@@ -167,7 +170,7 @@ margin-top:4px;
 .u{background:#3b82f6;}
 .b{background:#a855f7;}
 
-/* 價格 */
+/ 價格 /
 
 .price{
 color:#fb923c;
@@ -176,13 +179,27 @@ font-size:16px;
 margin-top:4px;
 }
 
-/* 故事 */
+/ 故事 /
 
 .story{
 font-size:12px;
 color:#9ca3af;
 margin-top:6px;
 line-height:1.4;
+}
+
+/ 手機版 */
+
+@media (max-width:1100px){
+.grid{grid-template-columns:repeat(4,1fr);}
+}
+
+@media (max-width:800px){
+.grid{grid-template-columns:repeat(3,1fr);}
+}
+
+@media (max-width:600px){
+.grid{grid-template-columns:repeat(2,1fr);}
 }
 
 </style>
@@ -217,7 +234,7 @@ line-height:1.4;
 
 <div class="container">
 
-<div class="grid" id="productGrid">
+<div class="grid">
 
 <div class="card">
 <img src="products/裝甲戰役.PNG">
@@ -322,21 +339,15 @@ line-height:1.4;
 </div>
 
 <script>
-
 function searchProduct(){
 let input=document.getElementById("search").value.toLowerCase();
 let cards=document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 let name=card.querySelector(".name").innerText.toLowerCase();
-if(name.includes(input)){
-card.style.display="block";
-}else{
-card.style.display="none";
-}
+card.style.display = name.includes(input) ? "block" : "none";
 });
 }
-
 </script>
 
 </body>
