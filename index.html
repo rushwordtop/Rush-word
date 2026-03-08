@@ -14,7 +14,7 @@ background:#020617;
 color:white;
 }
 
-/* 背景粒子 */
+/* 粒子背景 */
 
 body::before{
 content:"";
@@ -75,6 +75,21 @@ color:#9ca3af;
 margin-top:8px;
 }
 
+/* 警告 */
+
+.warning{
+max-width:800px;
+margin:20px auto;
+background:#111827;
+border:1px solid #374151;
+border-radius:10px;
+padding:14px 18px;
+font-size:13px;
+line-height:1.6;
+color:#d1d5db;
+text-align:center;
+}
+
 /* 搜尋 */
 
 .search{
@@ -113,8 +128,6 @@ padding:12px;
 box-shadow:0 8px 25px rgba(0,0,0,0.4);
 border:1px solid rgba(255,255,255,0.08);
 }
-
-/* 商品圖片 */
 
 .card img{
 width:100%;
@@ -189,6 +202,13 @@ line-height:1.4;
 <div class="hero">
 <h1>高濃度芳香液（40ml）</h1>
 <p>High Concentration Aroma Collection</p>
+</div>
+
+<div class="warning">
+⚠️ Beginner Notice / 新手提醒<br>
+本系列為高濃度芳香液產品，氣息強度較高。<br>
+若為初次接觸者，建議從少量開始並逐步適應，<br>
+避免過度使用以確保良好的體驗。
 </div>
 
 <div class="search">
@@ -304,7 +324,6 @@ line-height:1.4;
 <script>
 
 function searchProduct(){
-
 let input=document.getElementById("search").value.toLowerCase();
 let cards=document.querySelectorAll(".card");
 
@@ -316,7 +335,6 @@ card.style.display="block";
 card.style.display="none";
 }
 });
-
 }
 
 </script>
