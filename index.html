@@ -22,14 +22,8 @@ padding:30px 10px;
 background:#111827;
 }
 
-.header h1{
-margin:0;
-}
-
-/ 警告 /
-
 .warning{
-max-width:600px;
+max-width:650px;
 margin:20px auto;
 background:#111827;
 border-radius:10px;
@@ -42,12 +36,12 @@ color:#d1d5db;
 / 商品區 /
 
 .products{
-max-width:700px;
+max-width:720px;
 margin:auto;
 padding:10px;
 }
 
-/ 每排兩個 /
+/ 每排兩個 */
 
 .row{
 display:flex;
@@ -55,14 +49,17 @@ gap:15px;
 margin-bottom:15px;
 }
 
-/ 商品卡 /
-
 .card{
 flex:1;
 background:#0f172a;
 border-radius:10px;
 padding:10px;
 text-align:center;
+border:1px solid #1f2937;
+}
+
+.empty{
+flex:1;
 }
 
 .card img{
@@ -73,21 +70,15 @@ background:#020617;
 border-radius:8px;
 }
 
-/ 名稱 /
-
 .name{
 margin-top:6px;
 font-size:14px;
 }
 
-/ 星星 /
-
 .star{
 color:#facc15;
 font-size:13px;
 }
-
-/ 標籤 /
 
 .badge{
 display:inline-block;
@@ -101,15 +92,10 @@ margin-top:4px;
 .u{background:#3b82f6;}
 .b{background:#a855f7;}
 
-/ 價格 /
-
 .price{
 color:#fb923c;
 font-weight:bold;
-margin-top:3px;
 }
-
-/ 故事 */
 
 .story{
 font-size:12px;
@@ -133,8 +119,8 @@ margin-top:6px;
 
 <div class="products">
 
+<!-- 1 -->
 <div class="row">
-
 <div class="card">
 <img src="products/裝甲戰役.PNG">
 <div class="name">裝甲戰役</div>
@@ -152,11 +138,10 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">經典節奏設計。</div>
 </div>
-
 </div>
 
+<!-- 2 -->
 <div class="row">
-
 <div class="card">
 <img src="products/格蘭98.PNG">
 <div class="name">格蘭98</div>
@@ -174,11 +159,10 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">自信與力量。</div>
 </div>
-
 </div>
 
+<!-- 3 -->
 <div class="row">
-
 <div class="card">
 <img src="products/壯漢.PNG">
 <div class="name">壯漢</div>
@@ -196,10 +180,39 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">神秘深沉層次。</div>
 </div>
-
 </div>
 
+<!-- 4 -->
 <div class="row">
+<div class="card">
+<img src="products/曼陀羅_2.PNG">
+<div class="name">曼陀羅2</div>
+<div class="star">⭐⭐⭐</div>
+<div class="badge b">B</div>
+<div class="price">NT$850</div>
+<div class="story">更深層的氣息風格。</div>
+</div>
+
+<div class="card">
+<img src="products/綠光戰警_1.PNG">
+<div class="name">綠光戰警</div>
+<div class="star">⭐⭐⭐⭐</div>
+<div class="badge t">T</div>
+<div class="price">NT$850</div>
+<div class="story">速度與力量。</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="row">
+<div class="card">
+<img src="products/綠光戰警_2.PNG">
+<div class="name">綠光戰警2</div>
+<div class="star">⭐⭐⭐⭐</div>
+<div class="badge t">T</div>
+<div class="price">NT$850</div>
+<div class="story">進階力量節奏。</div>
+</div>
 
 <div class="card">
 <img src="products/綠巨人.PNG">
@@ -209,7 +222,10 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">爆發型力量代表。</div>
 </div>
+</div>
 
+<!-- 6 -->
+<div class="row">
 <div class="card">
 <img src="products/金剛baboon.PNG">
 <div class="name">金剛 Baboon</div>
@@ -219,10 +235,6 @@ margin-top:6px;
 <div class="story">野性力量概念。</div>
 </div>
 
-</div>
-
-<div class="row">
-
 <div class="card">
 <img src="products/ELOKI.PNG">
 <div class="name">ELOKI</div>
@@ -230,6 +242,18 @@ margin-top:6px;
 <div class="badge u">U</div>
 <div class="price">NT$850</div>
 <div class="story">科技節奏設計。</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="row">
+<div class="card">
+<img src="products/Glenburgie 7HG黑.PNG">
+<div class="name">Glenburgie 7HG黑</div>
+<div class="star">⭐⭐⭐⭐</div>
+<div class="badge u">U</div>
+<div class="price">NT$850</div>
+<div class="story">成熟穩定的氣息。</div>
 </div>
 
 <div class="card">
@@ -240,18 +264,17 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">爆發型衝擊。</div>
 </div>
-
 </div>
 
+<!-- 8 -->
 <div class="row">
-
 <div class="card">
-<img src="products/眼鏡蛇王.PNG">
-<div class="name">眼鏡蛇王</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
+<img src="products/大狗.PNG">
+<div class="name">大狗</div>
+<div class="star">⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">速度型象徵。</div>
+<div class="story">厚重直接的力量。</div>
 </div>
 
 <div class="card">
@@ -262,7 +285,20 @@ margin-top:6px;
 <div class="price">NT$850</div>
 <div class="story">高級系列設計。</div>
 </div>
+</div>
 
+<!-- 9 -->
+<div class="row">
+<div class="card">
+<img src="products/眼鏡蛇王.PNG">
+<div class="name">眼鏡蛇王</div>
+<div class="star">⭐⭐⭐⭐⭐</div>
+<div class="badge t">T</div>
+<div class="price">NT$850</div>
+<div class="story">速度型象徵。</div>
+</div>
+
+<div class="empty"></div>
 </div>
 
 </div>
