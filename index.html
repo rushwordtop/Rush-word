@@ -14,22 +14,7 @@ background:#020617;
 color:white;
 }
 
-/* 背景粒子 /
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:radial-gradient(circle,#ffffff22 1px,transparent 1px);
-background-size:40px 40px;
-opacity:0.15;
-z-index:-1;
-}
-
-/ 導航列 /
+/* 導航 /
 
 .navbar{
 display:flex;
@@ -46,33 +31,17 @@ letter-spacing:2px;
 font-size:18px;
 }
 
-nav a{
-color:#9ca3af;
-margin-left:20px;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:white;
-}
-
 / Banner /
 
 .hero{
 text-align:center;
 padding:40px 20px;
-background:linear-gradient(135deg,#020617,#111827);
+background:#111827;
 }
 
 .hero h1{
 margin:0;
 font-size:30px;
-}
-
-.hero p{
-color:#9ca3af;
-margin-top:8px;
 }
 
 / 警告 /
@@ -83,70 +52,45 @@ margin:20px auto;
 background:#111827;
 border:1px solid #374151;
 border-radius:10px;
-padding:14px 18px;
+padding:14px;
+text-align:center;
 font-size:13px;
-line-height:1.6;
-color:#d1d5db;
-text-align:center;
-}
-
-/ 搜尋 /
-
-.search{
-text-align:center;
-margin-top:20px;
-}
-
-.search input{
-padding:10px;
-width:260px;
-border-radius:8px;
-border:none;
-background:#111827;
-color:white;
-}
-
-/ 商品區 /
-
-.container{
-padding:25px;
 }
 
 / 商品牆 /
 
 .grid{
-display:grid;
-grid-template-columns:repeat(5,minmax(0,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:20px;
 max-width:1200px;
-margin:0 auto;
-justify-content:center;
+margin:auto;
 }
 
 / 商品卡片 /
 
 .card{
-background:rgba(255,255,255,0.05);
+width:200px;
+background:#0f172a;
 border-radius:12px;
 padding:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.35);
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid #1f2937;
 }
 
 .card img{
 width:100%;
-height:140px;
+height:150px;
 object-fit:contain;
 background:#020617;
 border-radius:8px;
-padding:6px;
 }
 
 / 名稱 /
 
 .name{
-font-size:14px;
 margin-top:6px;
+font-size:14px;
 }
 
 / 星星 /
@@ -156,7 +100,7 @@ color:#facc15;
 font-size:13px;
 }
 
-/ 標籤 /
+/ 標籤 */
 
 .badge{
 display:inline-block;
@@ -171,36 +115,15 @@ margin-top:4px;
 .u{background:#3b82f6;}
 .b{background:#a855f7;}
 
-/ 價格 /
-
 .price{
 color:#fb923c;
 font-weight:bold;
-font-size:16px;
-margin-top:4px;
 }
-
-/ 故事 /
 
 .story{
 font-size:12px;
 color:#9ca3af;
 margin-top:6px;
-line-height:1.4;
-}
-
-/ 手機版 */
-
-@media (max-width:1100px){
-.grid{grid-template-columns:repeat(4,1fr);}
-}
-
-@media (max-width:800px){
-.grid{grid-template-columns:repeat(3,1fr);}
-}
-
-@media (max-width:600px){
-.grid{grid-template-columns:repeat(2,1fr);}
 }
 
 </style>
@@ -210,30 +133,17 @@ line-height:1.4;
 
 <header class="navbar">
 <div class="logo">RUSH AROMA</div>
-<nav>
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">About</a>
-</nav>
 </header>
 
 <div class="hero">
 <h1>高濃度芳香液（40ml）</h1>
-<p>High Concentration Aroma Collection</p>
 </div>
 
 <div class="warning">
 ⚠️ Beginner Notice / 新手提醒<br>
 本系列為高濃度芳香液產品，氣息強度較高。<br>
-若為初次接觸者，建議從少量開始並逐步適應，<br>
-避免過度使用以確保良好的體驗。
+建議從少量開始並逐步適應。
 </div>
-
-<div class="search">
-<input type="text" id="search" placeholder="Search product..." onkeyup="searchProduct()">
-</div>
-
-<div class="container">
 
 <div class="grid">
 
@@ -243,7 +153,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐</div>
 <div class="badge u">U</div>
 <div class="price">NT$850</div>
-<div class="story">鋼鐵裝甲般的穩定力量，節奏沉穩而持久。</div>
+<div class="story">鋼鐵裝甲般的穩定力量。</div>
 </div>
 
 <div class="card">
@@ -252,7 +162,7 @@ line-height:1.4;
 <div class="star">⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">經典節奏設計，輕快順暢。</div>
+<div class="story">經典節奏設計。</div>
 </div>
 
 <div class="card">
@@ -261,7 +171,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐</div>
 <div class="badge u">U</div>
 <div class="price">NT$850</div>
-<div class="story">成熟年份概念，層次平衡。</div>
+<div class="story">成熟年份概念。</div>
 </div>
 
 <div class="card">
@@ -270,7 +180,7 @@ line-height:1.4;
 <div class="star">⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">自信與力量的象徵，存在感強。</div>
+<div class="story">自信與力量。</div>
 </div>
 
 <div class="card">
@@ -279,79 +189,10 @@ line-height:1.4;
 <div class="star">⭐⭐⭐⭐</div>
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
-<div class="story">厚重力量風格，衝擊直接。</div>
-</div>
-
-<div class="card">
-<img src="products/曼陀羅_1.PNG">
-<div class="name">曼陀羅</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge b">B</div>
-<div class="price">NT$850</div>
-<div class="story">神秘氣息系列，深沉層次展開。</div>
-</div>
-
-<div class="card">
-<img src="products/綠巨人.PNG">
-<div class="name">綠巨人</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">爆發型力量代表，衝擊最強。</div>
-</div>
-
-<div class="card">
-<img src="products/金剛baboon.PNG">
-<div class="name">金剛 Baboon</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">野性力量概念，原始而穩定。</div>
-</div>
-
-<div class="card">
-<img src="products/ELOKI.PNG">
-<div class="name">ELOKI</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">科技節奏設計，流暢平衡。</div>
-</div>
-
-<div class="card">
-<img src="products/TNT炸藥.PNG">
-<div class="name">TNT炸藥</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">爆發型衝擊，速度與力量。</div>
-</div>
-
-<div class="card">
-<img src="products/眼鏡蛇王.PNG">
-<div class="name">眼鏡蛇王</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">速度型象徵，敏捷爆發。</div>
+<div class="story">厚重力量風格。</div>
 </div>
 
 </div>
-</div>
-
-<script>
-
-function searchProduct(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-let name=card.querySelector(".name").innerText.toLowerCase();
-card.style.display = name.includes(input) ? "block" : "none";
-});
-}
-
-</script>
 
 </body>
-</html
+</html>
