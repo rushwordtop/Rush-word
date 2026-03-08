@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>高濃度芳香液（40ml）</title>
 
 <style>
@@ -15,7 +14,7 @@ background:#020617;
 color:white;
 }
 
-/* 粒子背景 */
+/* 背景粒子 */
 
 body::before{
 content:"";
@@ -70,6 +69,7 @@ padding:12px;
 box-shadow:0 8px 25px rgba(0,0,0,0.4);
 border:1px solid rgba(255,255,255,0.08);
 transition:0.25s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -88,7 +88,7 @@ border-radius:8px;
 padding:6px;
 }
 
-/* 商品名稱 */
+/* 名稱 */
 
 .name{
 font-size:14px;
@@ -103,7 +103,7 @@ color:#facc15;
 font-size:13px;
 }
 
-/* T U B 標籤 */
+/* 標籤 */
 
 .badge{
 display:inline-block;
@@ -138,8 +138,38 @@ font-size:16px;
 margin-top:4px;
 }
 
-</style>
+/* Popup */
 
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-box{
+background:#111827;
+padding:25px;
+border-radius:12px;
+max-width:400px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.close{
+position:absolute;
+font-size:26px;
+cursor:pointer;
+right:20px;
+top:15px;
+}
+
+</style>
 </head>
 
 <body>
@@ -153,7 +183,7 @@ margin-top:4px;
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="openStory('裝甲戰役')">
 <img src="products/裝甲戰役.PNG">
 <div class="name">裝甲戰役</div>
 <div class="star">⭐⭐⭐</div>
@@ -161,7 +191,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('Blue Boy')">
 <img src="products/blue_boy.PNG">
 <div class="name">Blue Boy</div>
 <div class="star">⭐⭐</div>
@@ -169,7 +199,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('格蘭98')">
 <img src="products/格蘭98.PNG">
 <div class="name">格蘭98</div>
 <div class="star">⭐⭐⭐⭐</div>
@@ -177,7 +207,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('性感男人')">
 <img src="products/性感男人.PNG">
 <div class="name">性感男人</div>
 <div class="star">⭐⭐⭐</div>
@@ -185,7 +215,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('壯漢')">
 <img src="products/壯漢.PNG">
 <div class="name">壯漢</div>
 <div class="star">⭐⭐⭐⭐</div>
@@ -193,7 +223,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('曼陀羅')">
 <img src="products/曼陀羅_1.PNG">
 <div class="name">曼陀羅</div>
 <div class="star">⭐⭐⭐</div>
@@ -201,31 +231,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
-<img src="products/曼陀羅_2.PNG">
-<div class="name">曼陀羅2</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge b">B</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
-<img src="products/綠光戰警_1.PNG">
-<div class="name">綠光戰警</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
-<img src="products/綠光戰警_2.PNG">
-<div class="name">綠光戰警2</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
+<div class="card" onclick="openStory('綠巨人')">
 <img src="products/綠巨人.PNG">
 <div class="name">綠巨人</div>
 <div class="star">⭐⭐⭐⭐⭐</div>
@@ -233,7 +239,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('金剛Baboon')">
 <img src="products/金剛baboon.PNG">
 <div class="name">金剛Baboon</div>
 <div class="star">⭐⭐⭐⭐</div>
@@ -241,7 +247,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openStory('ELOKI')">
 <img src="products/ELOKI.PNG">
 <div class="name">ELOKI</div>
 <div class="star">⭐⭐⭐⭐</div>
@@ -249,15 +255,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
-<img src="products/Glenburgie 7HG黑.PNG">
-<div class="name">Glenburgie 7HG黑</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
+<div class="card" onclick="openStory('TNT炸藥')">
 <img src="products/TNT炸藥.PNG">
 <div class="name">TNT炸藥</div>
 <div class="star">⭐⭐⭐⭐⭐</div>
@@ -265,23 +263,7 @@ margin-top:4px;
 <div class="price">NT$850</div>
 </div>
 
-<div class="card">
-<img src="products/大狗.PNG">
-<div class="name">大狗</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
-<img src="products/義林白金.PNG">
-<div class="name">義林白金</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-</div>
-
-<div class="card">
+<div class="card" onclick="openStory('眼鏡蛇王')">
 <img src="products/眼鏡蛇王.PNG">
 <div class="name">眼鏡蛇王</div>
 <div class="star">⭐⭐⭐⭐⭐</div>
@@ -291,6 +273,56 @@ margin-top:4px;
 
 </div>
 </div>
+
+<!-- 故事卡 -->
+
+<div id="storyModal" class="modal">
+<div class="modal-box">
+<span class="close" onclick="closeStory()">×</span>
+<h2 id="storyTitle"></h2>
+<p id="storyText"></p>
+</div>
+</div>
+
+<script>
+
+const stories = {
+
+"裝甲戰役":"靈感來自重裝戰車。厚實、穩定、耐久的力量風格。",
+
+"Blue Boy":"經典系列風格。平衡順暢、節奏自然。",
+
+"格蘭98":"年份酒概念設計。成熟、穩定、濃度扎實。",
+
+"性感男人":"力量與自信象徵。濃郁直接的氣息。",
+
+"壯漢":"厚重型氣息。力量感強烈。",
+
+"曼陀羅":"神秘系列。深沉、感官放大的風格。",
+
+"綠巨人":"力量爆發系列。衝擊最強。",
+
+"金剛Baboon":"野性力量風格。原始強烈。",
+
+"ELOKI":"科技感系列。平衡與層次。",
+
+"TNT炸藥":"爆發型氣息。速度與衝擊。",
+
+"眼鏡蛇王":"敏捷速度型代表。爆發迅速。"
+
+};
+
+function openStory(name){
+document.getElementById("storyTitle").innerText=name;
+document.getElementById("storyText").innerText=stories[name];
+document.getElementById("storyModal").style.display="flex";
+}
+
+function closeStory(){
+document.getElementById("storyModal").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
