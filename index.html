@@ -9,78 +9,65 @@
 
 body{
 font-family:Arial;
-margin:0;
 background:#020617;
 color:white;
+margin:0;
 }
 
-/* 導航 /
+/* 標題 /
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 30px;
-background:#020617;
-border-bottom:1px solid #1f2937;
-}
-
-.logo{
-font-weight:bold;
-letter-spacing:2px;
-font-size:18px;
-}
-
-/ Banner /
-
-.hero{
+.header{
 text-align:center;
-padding:40px 20px;
+padding:30px 10px;
 background:#111827;
 }
 
-.hero h1{
+.header h1{
 margin:0;
-font-size:30px;
 }
 
 / 警告 /
 
 .warning{
-max-width:800px;
+max-width:600px;
 margin:20px auto;
 background:#111827;
-border:1px solid #374151;
 border-radius:10px;
-padding:14px;
-text-align:center;
+padding:12px;
 font-size:13px;
+text-align:center;
+color:#d1d5db;
 }
 
-/ 商品牆 /
+/ 商品區 /
 
-.grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-max-width:1200px;
+.products{
+max-width:700px;
 margin:auto;
+padding:10px;
 }
 
-/ 商品卡片 /
+/ 每排兩個 /
+
+.row{
+display:flex;
+gap:15px;
+margin-bottom:15px;
+}
+
+/ 商品卡 /
 
 .card{
-width:200px;
+flex:1;
 background:#0f172a;
-border-radius:12px;
-padding:12px;
-border:1px solid #1f2937;
+border-radius:10px;
+padding:10px;
+text-align:center;
 }
 
 .card img{
 width:100%;
-height:150px;
+height:130px;
 object-fit:contain;
 background:#020617;
 border-radius:8px;
@@ -100,14 +87,13 @@ color:#facc15;
 font-size:13px;
 }
 
-/ 標籤 */
+/ 標籤 /
 
 .badge{
 display:inline-block;
-padding:2px 8px;
+padding:2px 6px;
 border-radius:20px;
 font-size:11px;
-font-weight:bold;
 margin-top:4px;
 }
 
@@ -115,10 +101,15 @@ margin-top:4px;
 .u{background:#3b82f6;}
 .b{background:#a855f7;}
 
+/ 價格 /
+
 .price{
 color:#fb923c;
 font-weight:bold;
+margin-top:3px;
 }
+
+/ 故事 */
 
 .story{
 font-size:12px;
@@ -131,21 +122,18 @@ margin-top:6px;
 
 <body>
 
-<header class="navbar">
-<div class="logo">RUSH AROMA</div>
-</header>
-
-<div class="hero">
+<div class="header">
 <h1>高濃度芳香液（40ml）</h1>
 </div>
 
 <div class="warning">
-⚠️ Beginner Notice / 新手提醒<br>
-本系列為高濃度芳香液產品，氣息強度較高。<br>
-建議從少量開始並逐步適應。
+⚠️ 新手提醒<br>
+本系列為高濃度芳香液產品，初學者建議從少量開始。
 </div>
 
-<div class="grid">
+<div class="products">
+
+<div class="row">
 
 <div class="card">
 <img src="products/裝甲戰役.PNG">
@@ -165,6 +153,10 @@ margin-top:6px;
 <div class="story">經典節奏設計。</div>
 </div>
 
+</div>
+
+<div class="row">
+
 <div class="card">
 <img src="products/格蘭98.PNG">
 <div class="name">格蘭98</div>
@@ -183,6 +175,10 @@ margin-top:6px;
 <div class="story">自信與力量。</div>
 </div>
 
+</div>
+
+<div class="row">
+
 <div class="card">
 <img src="products/壯漢.PNG">
 <div class="name">壯漢</div>
@@ -190,6 +186,17 @@ margin-top:6px;
 <div class="badge t">T</div>
 <div class="price">NT$850</div>
 <div class="story">厚重力量風格。</div>
+</div>
+
+<div class="card">
+<img src="products/曼陀羅_1.PNG">
+<div class="name">曼陀羅</div>
+<div class="star">⭐⭐⭐</div>
+<div class="badge b">B</div>
+<div class="price">NT$850</div>
+<div class="story">神秘深沉層次。</div>
+</div>
+
 </div>
 
 </div>
