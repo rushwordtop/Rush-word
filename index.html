@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高濃度芳香液 (40ml)</title>
     <style>
-        /* 顏色與基本設定 */
+        /* 深色主題與基本設定 */
         :root {
-            --bg-color: #0b0f19; /* 背景深藍色 */
-            --card-bg: #151b2b;  /* 卡片底色 */
-            --text-main: #ffffff; /* 主要文字白色 */
-            --text-sub: #8b9bb4;  /* 次要文字灰藍色 */
-            --accent-orange: #f39c12; /* 價格橘色 */
-            --badge-blue: #3498db; /* U標籤藍色 */
-            --badge-orange: #e67e22; /* T標籤橘色 */
+            --bg-color: #080c16; 
+            --card-bg: #111827;  
+            --text-main: #ffffff; 
+            --text-sub: #9ca3af;  
+            --accent-orange: #f97316; 
+            --badge-blue: #3b82f6; 
+            --badge-orange: #f59e0b; 
         }
 
         body {
@@ -24,114 +24,110 @@
             padding: 15px;
         }
 
-        /* 頂部連結按鈕樣式 */
+        /* 頂部連結按鈕區塊 */
         .top-link-container {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            margin-top: 10px;
         }
         .top-link-btn {
-            background-color: transparent;
+            background-color: var(--card-bg);
             color: var(--accent-orange);
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             font-weight: bold;
             font-size: 1.1rem;
             display: inline-block;
-            border: 1px solid var(--accent-orange);
-            transition: all 0.3s;
-        }
-        .top-link-btn:active {
-            background-color: var(--accent-orange);
-            color: #fff;
+            border: 2px solid var(--accent-orange);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* 標題與新手提示區塊 */
+        /* 標題與新手提示 */
         h1 {
             font-size: 1.8rem;
             margin-bottom: 5px;
-            letter-spacing: 1px;
+            font-weight: bold;
         }
         .notice {
-            color: #fff;
+            color: #d1d5db;
             font-size: 0.9rem;
-            line-height: 1.4;
+            line-height: 1.5;
             margin-bottom: 20px;
-            border-bottom: 1px solid #2c3e50;
-            padding-bottom: 15px;
         }
-        .notice-icon { color: #f1c40f; }
+        .notice-icon { color: #facc15; }
 
-        /* 商品列表排版 (手機版雙排) */
+        /* 商品卡片雙排網格 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 12px;
         }
 
-        /* 單個商品卡片設計 */
+        /* 卡片設計 */
         .product-card {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 15px 10px;
+            padding: 12px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* 圖片區塊 (白底) */
+        /* 圖片外框 (白底) */
         .img-container {
-            background-color: #fff;
+            background-color: #ffffff;
             width: 100%;
             aspect-ratio: 3/4;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             overflow: hidden;
         }
         .img-container img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 85%;
+            max-height: 85%;
             object-fit: contain;
         }
 
-        /* 文字與標籤細節 */
+        /* 文字細節 */
         .product-title {
-            font-size: 1.1rem;
-            margin: 5px 0;
+            font-size: 1.05rem;
+            margin: 4px 0;
             font-weight: bold;
         }
         .stars {
-            color: #f1c40f;
+            color: #facc15;
             font-size: 0.9rem;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .badge {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .badge.u { background-color: var(--badge-blue); }
         .badge.t { background-color: var(--badge-orange); }
+        
         .price {
             color: var(--accent-orange);
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 8px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 6px;
         }
         .desc {
             color: var(--text-sub);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
     </style>
 </head>
@@ -141,7 +137,7 @@
         <a href="10ml.html" class="top-link-btn">👉 前往 一般濃度 (10ml) 專區</a>
     </div>
 
-    <h1>高濃度芳香液（40ml）</h1>
+    <h1>高濃度芳香液 (40ml)</h1>
     <div class="notice">
         <span class="notice-icon">⚠️</span> Beginner Notice / 新手提醒<br>
         本系列為高濃度配方，新手建議先從較低濃度的款式開始體驗。
@@ -151,7 +147,7 @@
         
         <div class="product-card">
             <div class="img-container">
-                <img src="裝甲戰役.jpg" alt="裝甲戰役" onerror="this.style.display='none'">
+                <img src="裝甲戰役.jpg" alt="裝甲戰役">
             </div>
             <div class="product-title">裝甲戰役</div>
             <div class="stars">⭐️⭐️⭐️</div>
@@ -162,7 +158,7 @@
 
         <div class="product-card">
             <div class="img-container">
-                <img src="blueboy.jpg" alt="Blue Boy" onerror="this.style.display='none'">
+                <img src="blue boy.jpg" alt="Blue Boy">
             </div>
             <div class="product-title">Blue Boy</div>
             <div class="stars">⭐️⭐️</div>
@@ -173,7 +169,7 @@
 
         <div class="product-card">
             <div class="img-container">
-                <img src="格蘭98.jpg" alt="格蘭 98" onerror="this.style.display='none'">
+                <img src="格蘭98.jpg" alt="格蘭 98">
             </div>
             <div class="product-title">格蘭 98</div>
             <div class="stars">⭐️⭐️⭐️</div>
@@ -184,7 +180,7 @@
 
         <div class="product-card">
             <div class="img-container">
-                <img src="性感男人.jpg" alt="性感男人" onerror="this.style.display='none'">
+                <img src="性感男人.jpg" alt="性感男人">
             </div>
             <div class="product-title">性感男人</div>
             <div class="stars">⭐️⭐️</div>
