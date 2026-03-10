@@ -18,11 +18,12 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 15px;
         }
 
+        /* 頂部連結 */
         .top-link-container { text-align: center; margin-bottom: 25px; margin-top: 10px; }
         .top-link-btn {
             background-color: var(--card-bg);
@@ -40,10 +41,23 @@
         .notice { color: #d1d5db; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; border-bottom: 1px solid #2c3e50; padding-bottom: 15px; }
         .notice-icon { color: #facc15; }
 
+        /* 商品網格 */
         .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
         .product-card { background-color: var(--card-bg); border-radius: 12px; padding: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        .img-container { background-color: #ffffff; width: 100%; aspect-ratio: 3/4; border-radius: 8px; display: flex; justify-content: center; align-items: center; margin-bottom: 12px; overflow: hidden; }
+        
+        .img-container {
+            background-color: #ffffff;
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
         .img-container img { max-width: 85%; max-height: 85%; object-fit: contain; }
+
         .product-title { font-size: 1.05rem; margin: 4px 0; font-weight: bold; }
         .stars { color: #facc15; font-size: 0.9rem; margin-bottom: 6px; }
         .badge { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 0.7rem; font-weight: bold; margin-bottom: 6px; }
@@ -62,7 +76,7 @@
     <h1>高濃度芳香液 (40ml)</h1>
     <div class="notice">
         <span class="notice-icon">⚠️</span> Beginner Notice / 新手提醒<br>
-        本系列為高濃度配方，建議從較低濃度款式開始。
+        本系列為高濃度配方，建議先從低濃度款式體驗。
     </div>
 
     <div class="product-grid">
@@ -94,6 +108,12 @@
         <div class="product-card">
             <div class="img-container"><img src="products/壯漢.PNG"></div>
             <div class="product-title">壯漢</div>
+            <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="products/裝甲戰役.PNG"></div>
+            <div class="product-title">裝甲戰役</div>
             <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
         </div>
 
@@ -136,12 +156,6 @@
         <div class="product-card">
             <div class="img-container"><img src="products/Glenburgie 7HG黑.PNG"></div>
             <div class="product-title">7HG黑款</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/裝甲戰役.PNG"></div>
-            <div class="product-title">裝甲戰役</div>
             <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
         </div>
 
@@ -190,6 +204,18 @@
         <div class="product-card">
             <div class="img-container"><img src="products/大狗2.PNG"></div>
             <div class="product-title">大狗 2</div>
+            <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="products/Alien.PNG"></div>
+            <div class="product-title">ALIEN</div>
+            <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$950</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="products/FARMER.PNG"></div>
+            <div class="product-title">FARMER</div>
             <div class="stars">⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
         </div>
 
