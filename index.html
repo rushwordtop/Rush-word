@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高濃度芳香液 (40ml)</title>
     <style>
-        /* 深色主題與基本設定 */
         :root {
             --bg-color: #080c16; 
             --card-bg: #111827;  
@@ -24,28 +23,34 @@
             padding: 15px;
         }
 
-        /* 標題與新手提示 */
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+        /* 頂部連結按鈕 */
+        .top-link-container {
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        .top-link-btn {
+            background-color: var(--card-bg);
+            color: var(--accent-orange);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: 2px solid var(--accent-orange);
         }
-        .notice {
-            color: #d1d5db;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 5px; font-weight: bold; }
+        .notice { color: #d1d5db; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
         .notice-icon { color: #facc15; }
 
-        /* 商品卡片雙排網格 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
-        /* 卡片設計 */
         .product-card {
             background-color: var(--card-bg);
             border-radius: 12px;
@@ -56,7 +61,6 @@
             align-items: center;
         }
 
-        /* 圖片外框 (白底) */
         .img-container {
             background-color: #ffffff;
             width: 100%;
@@ -74,17 +78,8 @@
             object-fit: contain;
         }
 
-        /* 文字細節 */
-        .product-title {
-            font-size: 1.05rem;
-            margin: 4px 0;
-            font-weight: bold;
-        }
-        .stars {
-            color: #facc15;
-            font-size: 0.9rem;
-            margin-bottom: 6px;
-        }
+        .product-title { font-size: 1.05rem; margin: 4px 0; font-weight: bold; }
+        .stars { color: #facc15; font-size: 0.9rem; margin-bottom: 6px; }
         .badge {
             display: inline-flex;
             justify-content: center;
@@ -99,20 +94,15 @@
         }
         .badge.u { background-color: var(--badge-blue); }
         .badge.t { background-color: var(--badge-orange); }
-        
-        .price {
-            color: var(--accent-orange);
-            font-size: 1.15rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-        .desc {
-            color: var(--text-sub);
-            font-size: 0.75rem;
-        }
+        .price { color: var(--accent-orange); font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
+        .desc { color: var(--text-sub); font-size: 0.75rem; }
     </style>
 </head>
 <body>
+
+    <div class="top-link-container">
+        <a href="10ml.html" class="top-link-btn">👉 前往 一般濃度 (10ml) 專區</a>
+    </div>
 
     <h1>高濃度芳香液 (40ml)</h1>
     <div class="notice">
@@ -124,18 +114,7 @@
         
         <div class="product-card">
             <div class="img-container">
-                <img src="裝甲戰役.jpg" alt="裝甲戰役">
-            </div>
-            <div class="product-title">裝甲戰役</div>
-            <div class="stars">⭐️⭐️⭐️</div>
-            <div class="badge u">U</div>
-            <div class="price">NT$850</div>
-            <div class="desc">鋼鐵裝甲般的穩定力量。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container">
-                <img src="blue boy.jpg" alt="Blue Boy">
+                <img src="products/blue_boy.PNG" alt="Blue Boy">
             </div>
             <div class="product-title">Blue Boy</div>
             <div class="stars">⭐️⭐️</div>
@@ -146,7 +125,18 @@
 
         <div class="product-card">
             <div class="img-container">
-                <img src="格蘭98.jpg" alt="格蘭 98">
+                <img src="products/性感男人.PNG" alt="性感男人">
+            </div>
+            <div class="product-title">性感男人</div>
+            <div class="stars">⭐️⭐️</div>
+            <div class="badge t">T</div>
+            <div class="price">NT$850</div>
+            <div class="desc">專屬男性魅力。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="products/格蘭98.PNG" alt="格蘭 98">
             </div>
             <div class="product-title">格蘭 98</div>
             <div class="stars">⭐️⭐️⭐️</div>
@@ -157,13 +147,13 @@
 
         <div class="product-card">
             <div class="img-container">
-                <img src="性感男人.jpg" alt="性感男人">
+                <img src="products/大狗.PNG" alt="大狗">
             </div>
-            <div class="product-title">性感男人</div>
-            <div class="stars">⭐️⭐️</div>
-            <div class="badge t">T</div>
+            <div class="product-title">大狗</div>
+            <div class="stars">⭐️⭐️⭐️</div>
+            <div class="badge u">U</div>
             <div class="price">NT$850</div>
-            <div class="desc">專屬男性魅力。</div>
+            <div class="desc">強力推薦款式。</div>
         </div>
 
     </div>
