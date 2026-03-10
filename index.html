@@ -1,308 +1,199 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高濃度芳香液（40ml）</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高濃度芳香液 (40ml)</title>
+    <style>
+        /* 顏色與基本設定 */
+        :root {
+            --bg-color: #0b0f19; /* 背景深藍色 */
+            --card-bg: #151b2b;  /* 卡片底色 */
+            --text-main: #ffffff; /* 主要文字白色 */
+            --text-sub: #8b9bb4;  /* 次要文字灰藍色 */
+            --accent-orange: #f39c12; /* 價格橘色 */
+            --badge-blue: #3498db; /* U標籤藍色 */
+            --badge-orange: #e67e22; /* T標籤橘色 */
+        }
 
-<style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+        }
 
-body{
-font-family:Arial;
-background:#020617;
-color:white;
-margin:0;
-}
+        /* 頂部連結按鈕樣式 */
+        .top-link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .top-link-btn {
+            background-color: transparent;
+            color: var(--accent-orange);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: 1px solid var(--accent-orange);
+            transition: all 0.3s;
+        }
+        .top-link-btn:active {
+            background-color: var(--accent-orange);
+            color: #fff;
+        }
 
-/* 標題 /
+        /* 標題與新手提示區塊 */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .notice {
+            color: #fff;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #2c3e50;
+            padding-bottom: 15px;
+        }
+        .notice-icon { color: #f1c40f; }
 
-.header{
-text-align:center;
-padding:30px 10px;
-background:#111827;
-}
+        /* 商品列表排版 (手機版雙排) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
 
-.warning{
-max-width:650px;
-margin:20px auto;
-background:#111827;
-border-radius:10px;
-padding:12px;
-font-size:13px;
-text-align:center;
-color:#d1d5db;
-}
+        /* 單個商品卡片設計 */
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/ 商品區 /
+        /* 圖片區塊 (白底) */
+        .img-container {
+            background-color: #fff;
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .img-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
 
-.products{
-max-width:720px;
-margin:auto;
-padding:10px;
-}
-
-/ 每排兩個 */
-
-.row{
-display:flex;
-gap:15px;
-margin-bottom:15px;
-}
-
-.card{
-flex:1;
-background:#0f172a;
-border-radius:10px;
-padding:10px;
-text-align:center;
-border:1px solid #1f2937;
-}
-
-.empty{
-flex:1;
-}
-
-.card img{
-width:100%;
-height:130px;
-object-fit:contain;
-background:#020617;
-border-radius:8px;
-}
-
-.name{
-margin-top:6px;
-font-size:14px;
-}
-
-.star{
-color:#facc15;
-font-size:13px;
-}
-
-.badge{
-display:inline-block;
-padding:2px 6px;
-border-radius:20px;
-font-size:11px;
-margin-top:4px;
-}
-
-.t{background:#fb923c;}
-.u{background:#3b82f6;}
-.b{background:#a855f7;}
-
-.price{
-color:#fb923c;
-font-weight:bold;
-}
-
-.story{
-font-size:12px;
-color:#9ca3af;
-margin-top:6px;
-}
-
-</style>
+        /* 文字與標籤細節 */
+        .product-title {
+            font-size: 1.1rem;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .stars {
+            color: #f1c40f;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .badge {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .badge.u { background-color: var(--badge-blue); }
+        .badge.t { background-color: var(--badge-orange); }
+        .price {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .desc {
+            color: var(--text-sub);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="header">
-<h1>高濃度芳香液（40ml）</h1>
-</div>
+    <div class="top-link-container">
+        <a href="10ml.html" class="top-link-btn">👉 前往 一般濃度 (10ml) 專區</a>
+    </div>
 
-<div class="warning">
-⚠️ Beginner Notice / 新手提醒<br>
-本系列為高濃度配方，
-新手建議先從較低濃度的款式開始體驗
-</div>
+    <h1>高濃度芳香液（40ml）</h1>
+    <div class="notice">
+        <span class="notice-icon">⚠️</span> Beginner Notice / 新手提醒<br>
+        本系列為高濃度配方，新手建議先從較低濃度的款式開始體驗。
+    </div>
 
-<div class="products">
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <div class="img-container">
+                <img src="裝甲戰役.jpg" alt="裝甲戰役" onerror="this.style.display='none'">
+            </div>
+            <div class="product-title">裝甲戰役</div>
+            <div class="stars">⭐️⭐️⭐️</div>
+            <div class="badge u">U</div>
+            <div class="price">NT$850</div>
+            <div class="desc">鋼鐵裝甲般的穩定力量。</div>
+        </div>
 
-<!-- 1 -->
-<div class="row">
-<div class="card">
-<img src="products/裝甲戰役.PNG">
-<div class="name">裝甲戰役</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">鋼鐵裝甲般的穩定力量。</div>
-</div>
+        <div class="product-card">
+            <div class="img-container">
+                <img src="blueboy.jpg" alt="Blue Boy" onerror="this.style.display='none'">
+            </div>
+            <div class="product-title">Blue Boy</div>
+            <div class="stars">⭐️⭐️</div>
+            <div class="badge t">T</div>
+            <div class="price">NT$850</div>
+            <div class="desc">經典節奏設計。</div>
+        </div>
 
-<div class="card">
-<img src="products/blue_boy.PNG">
-<div class="name">Blue Boy</div>
-<div class="star">⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">經典節奏設計。</div>
-</div>
-</div>
+        <div class="product-card">
+            <div class="img-container">
+                <img src="格蘭98.jpg" alt="格蘭 98" onerror="this.style.display='none'">
+            </div>
+            <div class="product-title">格蘭 98</div>
+            <div class="stars">⭐️⭐️⭐️</div>
+            <div class="badge u">U</div>
+            <div class="price">NT$850</div>
+            <div class="desc">高純度經典款。</div>
+        </div>
 
-<!-- 2 -->
-<div class="row">
-<div class="card">
-<img src="products/格蘭98.PNG">
-<div class="name">格蘭98</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">成熟年份概念。</div>
-</div>
+        <div class="product-card">
+            <div class="img-container">
+                <img src="性感男人.jpg" alt="性感男人" onerror="this.style.display='none'">
+            </div>
+            <div class="product-title">性感男人</div>
+            <div class="stars">⭐️⭐️</div>
+            <div class="badge t">T</div>
+            <div class="price">NT$850</div>
+            <div class="desc">專屬男性魅力。</div>
+        </div>
 
-<div class="card">
-<img src="products/性感男人.PNG">
-<div class="name">性感男人</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">自信與力量。</div>
-</div>
-</div>
-
-<!-- 3 -->
-<div class="row">
-<div class="card">
-<img src="products/壯漢.PNG">
-<div class="name">壯漢</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">厚重力量風格。</div>
-</div>
-
-<div class="card">
-<img src="products/曼陀羅_1.PNG">
-<div class="name">曼陀羅</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge b">B</div>
-<div class="price">NT$850</div>
-<div class="story">神秘深沉層次。</div>
-</div>
-</div>
-
-<!-- 4 -->
-<div class="row">
-<div class="card">
-<img src="products/曼陀羅_2.PNG">
-<div class="name">曼陀羅2</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge b">B</div>
-<div class="price">NT$850</div>
-<div class="story">更深層的氣息風格。</div>
-</div>
-
-<div class="card">
-<img src="products/綠光戰警_1.PNG">
-<div class="name">綠光戰警</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">速度與力量。</div>
-</div>
-</div>
-
-<!-- 5 -->
-<div class="row">
-<div class="card">
-<img src="products/綠光戰警_2.PNG">
-<div class="name">綠光戰警2</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">進階力量節奏。</div>
-</div>
-
-<div class="card">
-<img src="products/綠巨人.PNG">
-<div class="name">綠巨人</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">爆發型力量代表。</div>
-</div>
-</div>
-
-<!-- 6 -->
-<div class="row">
-<div class="card">
-<img src="products/金剛baboon.PNG">
-<div class="name">金剛 Baboon</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">野性力量概念。</div>
-</div>
-
-<div class="card">
-<img src="products/ELOKI.PNG">
-<div class="name">ELOKI</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">科技節奏設計。</div>
-</div>
-</div>
-
-<!-- 7 -->
-<div class="row">
-<div class="card">
-<img src="products/Glenburgie 7HG黑.PNG">
-<div class="name">Glenburgie 7HG黑</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">成熟穩定的氣息。</div>
-</div>
-
-<div class="card">
-<img src="products/TNT炸藥.PNG">
-<div class="name">TNT炸藥</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">爆發型衝擊。</div>
-</div>
-</div>
-
-<!-- 8 -->
-<div class="row">
-<div class="card">
-<img src="products/大狗.PNG">
-<div class="name">大狗</div>
-<div class="star">⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">厚重直接的力量。</div>
-</div>
-
-<div class="card">
-<img src="products/義林白金.PNG">
-<div class="name">義林白金</div>
-<div class="star">⭐⭐⭐⭐</div>
-<div class="badge u">U</div>
-<div class="price">NT$850</div>
-<div class="story">高級系列設計。</div>
-</div>
-</div>
-
-<!-- 9 -->
-<div class="row">
-<div class="card">
-<img src="products/眼鏡蛇王.PNG">
-<div class="name">眼鏡蛇王</div>
-<div class="star">⭐⭐⭐⭐⭐</div>
-<div class="badge t">T</div>
-<div class="price">NT$850</div>
-<div class="story">速度型象徵。</div>
-</div>
-
-<div class="empty"></div>
-</div>
-
-</div>
+    </div>
 
 </body>
 </html>
