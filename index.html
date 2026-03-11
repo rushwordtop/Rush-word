@@ -3,202 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高濃度芳香液 (40ml) - 頂級專區</title>
+    <title>產品展示網格</title>
     <style>
-        :root {
-            --bg-color: #080c16; --card-bg: #111827; --text-main: #ffffff; 
-            --text-sub: #9ca3af; --accent-orange: #f97316; --badge-blue: #3b82f6; --badge-orange: #f59e0b; 
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
         }
-        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, sans-serif; margin: 0; padding: 15px; }
-        .top-link-container { text-align: center; margin-bottom: 25px; margin-top: 10px; }
-        .top-link-btn { background-color: var(--card-bg); color: var(--accent-orange); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; display: inline-block; border: 2px solid var(--accent-orange); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        h1 { font-size: 1.8rem; margin-bottom: 5px; font-weight: bold; }
-        .notice { color: #d1d5db; font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px; border-bottom: 1px solid #2c3e50; padding-bottom: 15px; }
-        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .product-card { background-color: var(--card-bg); border-radius: 12px; padding: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        .img-container { background-color: #ffffff; width: 100%; aspect-ratio: 3/4; border-radius: 8px; display: flex; justify-content: center; align-items: center; margin-bottom: 12px; overflow: hidden; }
-        .img-container img { max-width: 85%; max-height: 85%; object-fit: contain; }
-        .product-title { font-size: 1.05rem; margin: 4px 0; font-weight: bold; }
-        .stars { color: #facc15; font-size: 0.8rem; margin-bottom: 6px; }
-        .badge { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 0.7rem; font-weight: bold; margin-bottom: 6px; }
-        .badge.u { background-color: var(--badge-blue); }
-        .badge.t { background-color: var(--badge-orange); }
-        .price { color: var(--accent-orange); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
-        .desc { color: var(--text-sub); font-size: 0.7rem; line-height: 1.3; text-align: left; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .img-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fafafa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .meta-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .stars {
+            color: #f5c518;
+            font-size: 0.9rem;
+        }
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+        .badge.u { background-color: #e74c3c; } /* 紅色：強烈 */
+        .badge.t { background-color: #3498db; } /* 藍色：層次/技巧 */
+        .badge.b { background-color: #2ecc71; } /* 綠色：平緩/基礎 */
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e60012;
+            margin-bottom: 10px;
+        }
+        .desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .desc b {
+            color: #333;
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-link-container">
-        <a href="10ml.html" class="top-link-btn">👉 前往 一般濃度 (10ml) 專區</a>
-    </div>
-
-    <h1>高濃度芳香液 (40ml)</h1>
-    <div class="notice">⚠️ 新手提醒：本系列純度極高，建議由資深玩家使用，或從較低濃度款式開始體驗。</div>
-
     <div class="product-grid">
-        
+
         <div class="product-card">
-            <div class="img-container"><img src="products/Alien.PNG" alt="ALIEN"></div>
-            <div class="product-title">ALIEN 限量版</div>
-            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$950</div>
-            <div class="desc"><b>故事：</b>來自外星的神祕配方，帶你體驗真空中的無重力快感。瞬間爆發，超脫地球束縛。</div>
+            <div class="img-container"><img src="IMG_2585.PNG" alt="格蘭98"></div>
+            <div class="product-title">格蘭98</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>經典不敗的紅盾配方，帶來穩重又綿長的放鬆體驗，經得起時間考驗。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/FARMER.PNG" alt="FARMER"></div>
-            <div class="product-title">FARMER 農夫</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>致敬拓荒者的原始力量。穩健、持久，幫你掌控深處慾望，推向感官極限。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/blue_boy.PNG" alt="Blue Boy"></div>
-            <div class="product-title">Blue Boy</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>經典節奏設計，像藍色憂鬱中的一抹亮色，給予你穩定且持續的愉悅頻率。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/性感男人.PNG" alt="性感男人"></div>
-            <div class="product-title">性感男人</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>紅色激情的代名詞。專為男性魅力設計，喚醒體內沉睡的野獸，充滿掌控感。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/裝甲戰役.PNG" alt="裝甲戰役"></div>
+            <div class="img-container"><img src="IMG_2586.PNG" alt="裝甲戰役"></div>
             <div class="product-title">裝甲戰役</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>鋼鐵般的防線，給予你最堅實的心理支撐。在高強度的戰役中，依然穩定如初。</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>銅牆鐵壁般的強烈衝擊，瞬間引爆感官極限，專為重度玩家打造。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/壯漢.PNG" alt="壯漢"></div>
-            <div class="product-title">壯漢 (Paladin)</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>聖騎士般的榮耀，純粹的硬派力量。適合追求高純度、不拖泥帶水的資深玩家。</div>
+            <div class="img-container"><img src="IMG_2587.PNG" alt="英國國旗"></div>
+            <div class="product-title">英國國旗</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>帶著英倫風情的優雅氣息，層次豐富且迷人，宛如一場華麗的皇家盛宴。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/格蘭98.PNG" alt="格蘭 98"></div>
-            <div class="product-title">格蘭 98</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>傳承經典的高純度配方。98% 的滿意度回饋，是市場上永不落幕的長青選擇。</div>
+            <div class="img-container"><img src="IMG_2589.PNG" alt="格倫伯吉95銀款"></div>
+            <div class="product-title">格倫伯吉95銀款</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>銀色質感的純粹，帶來如絲般滑順的冷冽快感，細緻而不失強勁。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/大狗.PNG" alt="大狗"></div>
-            <div class="product-title">大狗 Big Dog</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>領袖級的爆發力。像大狗一樣忠誠且強大，瞬間填滿你的感官空間。</div>
+            <div class="img-container"><img src="IMG_2590.PNG" alt="公羊ram"></div>
+            <div class="product-title">公羊 ram</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>狂野不羈的爆發力，喚醒你內心深處最原始的野性本能。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/TNT炸藥.PNG" alt="TNT 炸藥"></div>
-            <div class="product-title">TNT 炸藥</div>
-            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>一觸即發！專為追求「瞬間衝頂」的玩家設計，引爆你靈魂深處的火花。</div>
+            <div class="img-container"><img src="IMG_2592.PNG" alt="TNT炸藥"></div>
+            <div class="product-title">TNT炸藥</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>顧名思義的炸裂感，毫不拖泥帶水的瞬間爆發，震撼你的每一根神經。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/ELOKI.PNG" alt="ELOKI"></div>
-            <div class="product-title">ELOKI 迷幻</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>獨特的調配比例，帶來如夢似幻的體驗。適合想在放鬆之餘探索神祕感的你。</div>
+            <div class="img-container"><img src="IMG_2593.PNG" alt="金剛baboon"></div>
+            <div class="product-title">金剛 baboon</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>叢林霸主的強悍氣場，給你無可匹敵的征服感與震撼的視聽覺幻象。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/瑪莎拉蒂.PNG" alt="瑪莎拉蒂"></div>
-            <div class="product-title">瑪莎拉蒂</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>奢華與速度的結合。流暢的進入感與強大的推背感，讓你體驗頂級超跑的快意。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/曼陀羅_1.PNG" alt="曼陀羅"></div>
-            <div class="product-title">曼陀羅</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>深邃的黑色魔力。像曼陀羅花一樣令人沉醉，節奏由緩入深，層次豐富。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/Glenburgie 7HG黑.PNG" alt="7HG 黑標"></div>
-            <div class="product-title">7HG 黑標</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>專業 P.R.C 系列。沉穩的黑標配方，提供深度的平滑肌放鬆，是深夜的絕佳夥伴。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/金剛baboon.PNG" alt="金剛 Baboon"></div>
-            <div class="product-title">金剛 Baboon</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>野性原力的震撼。像在叢林中奔跑般無拘無束，給予最原始的身心釋放。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/阿姆斯特.PNG" alt="阿姆斯特"></div>
-            <div class="product-title">阿姆斯特</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>經典傳承。像這座城市一樣自由且包容，溫柔地包裹你的感官，持久且耐人尋味。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/眼鏡蛇王.PNG" alt="眼鏡蛇王"></div>
-            <div class="product-title">眼鏡蛇王</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>致命的吸引力。鎖定目標後精確出擊，帶來瞬間且強烈的高亢感，令人欲罷不能。</div>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container"><img src="products/綠光戰警_1.PNG" alt="綠光戰警"></div>
+            <div class="img-container"><img src="IMG_2594.PNG" alt="綠光戰警"></div>
             <div class="product-title">綠光戰警</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>守護你的激情。像能量戒指一樣點燃綠色火焰，清爽感中帶著不容忽視的勁頭。</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>綠色能量的守護，帶來清晰又迷幻的雙重享受，開啟你的感官新視界。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/綠巨人.PNG" alt="綠巨人"></div>
-            <div class="product-title">綠巨人 Hulk</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>憤怒般的爆發力。撕裂平庸的體感，帶給你全身心震撼的無敵體驗。</div>
+            <div class="img-container"><img src="IMG_2595.PNG" alt="科技10"></div>
+            <div class="product-title">科技 10</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>來自未來的神祕配方，以高科技比例精準刺激每一個感官細胞。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/義林白金.PNG" alt="義林白金"></div>
-            <div class="product-title">義林白金</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>純淨高貴。像白金般閃耀且珍貴，帶來極速且高純度的清透快感。</div>
+            <div class="img-container"><img src="IMG_2596.PNG" alt="曼陀羅"></div>
+            <div class="product-title">曼陀羅</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>充滿異國情調的神祕黃金氣息，讓人深陷其中無法自拔的迷幻旅程。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/科技10.PNG" alt="科技 10"></div>
-            <div class="product-title">科技 10 (XION)</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>未來感的電路紋路。高科技精密萃取，清爽強效，像電腦升級一樣提升感官性能。</div>
+            <div class="img-container"><img src="IMG_2598.PNG" alt="森林"></div>
+            <div class="product-title">森林</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>漫步在幽暗森林中的清幽，給你最純粹的平靜與自然的呼吸感。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/森林.PNG" alt="森林"></div>
-            <div class="product-title">森林 Fantasy</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>迷幻森林。綠蓋設計代表清新且自然的氣息，讓你在喧囂中找回最純粹的放鬆。</div>
+            <div class="img-container"><img src="IMG_2599.PNG" alt="sex male 性感男人"></div>
+            <div class="product-title">性感男人</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>專為釋放男性極致魅力打造，點燃最純粹的熱情之火，燃燒所有理智。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/大狗2.PNG" alt="大狗 2.0"></div>
-            <div class="product-title">大狗 2.0</div>
-            <div class="stars">⭐️⭐️⭐️⭐️</div><div class="badge u">U</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>進化版配方。比一代更強、更猛、更持久，專為不滿足於現狀的玩家升級打造。</div>
+            <div class="img-container"><img src="IMG_2600.PNG" alt="阿姆斯特"></div>
+            <div class="product-title">阿姆斯特</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>致敬荷蘭首都的自由氣息，帶來無拘無束的奔放體驗，隨心所欲。</div>
         </div>
 
         <div class="product-card">
-            <div class="img-container"><img src="products/瑪莎拉蒂2.PNG" alt="瑪莎拉蒂 2"></div>
-            <div class="product-title">瑪莎拉蒂 2</div>
-            <div class="stars">⭐️⭐️⭐️</div><div class="badge t">T</div><div class="price">NT$850</div>
-            <div class="desc"><b>故事：</b>二代加強版。更優雅的調速，更猛烈的衝刺，帶你領略感官賽道的極速之巔。</div>
+            <div class="img-container"><img src="IMG_2601.PNG" alt="裝倫蛇王"></div>
+            <div class="product-title">裝倫蛇王</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>蛇王降臨，冷酷而精準的感官狙擊，獨特的深邃配方讓你欲罷不能。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2602.PNG" alt="格倫伯吉95藍款"></div>
+            <div class="product-title">格倫伯吉95藍款</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>如深海般的寧靜與包容，帶來漸進式的深度放鬆，層層遞進。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2603.PNG" alt="叢林白金"></div>
+            <div class="product-title">叢林白金</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>叢林中的珍稀寶藏，白金質感的清新中帶有不容忽視的迷人後勁。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2604.PNG" alt="ELOKI"></div>
+            <div class="product-title">ELOKI</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>迷幻色彩的具象化，帶你進入光怪陸離的奇妙世界，享受視覺與感官的交響樂。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2605.PNG" alt="Glenburgie 7HG黑"></div>
+            <div class="product-title">Glenburgie 7HG黑</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>暗黑系列的高階選擇，頂級黑金骷髏工藝帶來沉穩且具破壞力的重塑體驗。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2606.PNG" alt="C4"></div>
+            <div class="product-title">C4</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>危險又迷人的強力炸藥，挑戰你的感官耐受度，一觸即發。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2607.PNG" alt="綠巨人"></div>
+            <div class="product-title">綠巨人</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>浩克般的強大破壞力量，撕裂一切疲憊與束縛，釋放純粹的能量。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2608.PNG" alt="黃pig"></div>
+            <div class="product-title">黃 pig</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>俏皮可愛的外表下，藏著讓人會心一笑的愉悅能量，輕鬆無負擔。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2609.PNG" alt="格蘭4HG黑"></div>
+            <div class="product-title">格蘭4HG黑</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>深沉與純粹的極致展現，給予你最紮實的安定感與綿密的愉悅。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2611.PNG" alt="白面具"></div>
+            <div class="product-title">白面具</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>戴上面具拋開世俗束縛，享受隱匿於黑暗中的狂歡與釋放。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2612.PNG" alt="blue boy"></div>
+            <div class="product-title">blue boy</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>藍色男孩的溫柔擁抱，柔和卻能直達心底，提供溫和持久的平靜能量。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2613.PNG" alt="格倫伯吉95綠款"></div>
+            <div class="product-title">格倫伯吉95綠款</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>充滿生機的綠色奇蹟，喚醒身體的每一個角落，帶來清新的活力。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2614.PNG" alt="眼鏡蛇王"></div>
+            <div class="product-title">眼鏡蛇王</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>致命的吸引力，一旦沾染便無法輕易抽離，毒性猛烈且讓人上癮。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2615.PNG" alt="格倫伯吉95黑款"></div>
+            <div class="product-title">格倫伯吉95黑款</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>經典 95 系列的暗黑巔峰，渾厚且回味無窮，行家必備的珍藏。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2616.PNG" alt="大狗"></div>
+            <div class="product-title">大狗</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge b">B</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>忠誠而憨厚的陪伴，帶來平穩舒適的安心感，適合日常的輕鬆節奏。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2617.PNG" alt="瑪莎拉蒂"></div>
+            <div class="product-title">瑪莎拉蒂</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>海神三叉戟的頂級奢華體驗，流暢、快速且令人心跳加速。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2618.PNG" alt="格蘭4HG"></div>
+            <div class="product-title">格蘭4HG</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟</div>
+                <div class="badge t">T</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>綠盾的自然之力，溫和而持久的經典選擇，適合任何時刻的陪伴。</div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="IMG_2619.PNG" alt="義林黑金"></div>
+            <div class="product-title">義林黑金</div>
+            <div class="meta-info">
+                <div class="stars">🌟🌟🌟🌟🌟</div>
+                <div class="badge u">U</div>
+            </div>
+            <div class="price">NT$850</div>
+            <div class="desc"><b>故事：</b>尊貴的黑金交織，展現王者般的頂級質感與氣場，尊榮的感官盛宴。</div>
         </div>
 
     </div>
+
 </body>
 </html>
