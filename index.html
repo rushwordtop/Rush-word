@@ -18,7 +18,7 @@
             margin: 0 auto;
         }
 
-        /* 頂部連結 (紅圈處) */
+        /* 頂部連結 (前往 10ml) */
         .top-nav {
             display: flex;
             justify-content: flex-end;
@@ -92,10 +92,11 @@
             border-color: #374151;
         }
 
+        /* 圖片容器：這裡已修復高度問題，保證整齊劃一 */
         .img-container {
             width: 100%;
-            aspect-ratio: 1 / 1.1;
-            background-color: #ffffff; /* 圖片白底框，對齊截圖 */
+            height: 220px; /* 強制所有白框高度一致 */
+            background-color: #ffffff;
             border-radius: 8px;
             margin-bottom: 15px;
             display: flex;
@@ -107,7 +108,9 @@
         .img-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* 保證圖片等比縮放，不變形被拉長 */
         }
 
         .product-title {
@@ -136,9 +139,9 @@
             color: white;
             margin-bottom: 10px;
         }
-        .badge.u { background-color: #3b82f6; } /* 截圖中的 U 是藍色 */
-        .badge.t { background-color: #f97316; } /* 截圖中的 T 是橘色 */
-        .badge.b { background-color: #10b981; } /* B 設為綠色 */
+        .badge.u { background-color: #3b82f6; } /* 藍色 */
+        .badge.t { background-color: #f97316; } /* 橘色 */
+        .badge.b { background-color: #10b981; } /* 綠色 */
 
         .price {
             color: #f97316; /* 價格橘色 */
@@ -452,4 +455,3 @@
 
 </body>
 </html>
-
